@@ -1,0 +1,92 @@
+.App{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(227, 224, 255), rgb(242, 235, 255));
+}
+
+.container{
+    display: flex;
+    width: 700px;
+    height: 500px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+}
+
+/* Steps */
+
+.container aside{
+    padding: 20px;
+    flex: 1;
+    background: rgb(105, 105, 255);
+    min-width: 250px;
+    border-radius: 8px;
+}
+
+.container aside .steps{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.container aside .steps .step{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      align-items: center;
+}
+
+/* Active */
+.container aside .steps .step.active .step-number{
+    background: white;
+    color: rgb(105, 105, 255);
+}
+
+
+.container aside .steps .step .step-number{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+}
+
+.container aside .steps .step .step-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.container aside .steps .step .step-info p{
+    color: rgb(169, 169, 255);
+    font-size: 13px;
+}
+
+.container aside .steps .step .step-info h1{
+      font-size: 16px;
+      color: white;
+}
+
+/* Form Content */
+.container .content{
+    flex: 2;
+    padding: 10px 30px;
+}
+
+.container form .form-title{
+    font-size: 24px;
+    color: rgb(51, 51, 111);
+}
+
+.container form .form-description{
+    font-size: 15px;
+    color: rgb(182, 182, 182);
+}
