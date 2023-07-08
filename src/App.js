@@ -2,6 +2,8 @@ import { useState } from "react";
 import Paragraph from "./components/Paragraph";
 import Title from "./components/Title";
 import "./styles/App.css"
+import Input from "./components/Input/Input";
+import Button from "./components/Button/Button";
 
 function App() {
 
@@ -23,15 +25,15 @@ function App() {
             </div>
 
             <div className="step">
-            <div className={`step ${step === 2 && "active"}`}>
-              <div className="step-number">
-                2
+              <div className={`step ${step === 2 && "active"}`}>
+                <div className="step-number">
+                  2
+                </div>
+                <div className="step-info">
+                  <Paragraph>STEP 2</Paragraph>
+                  <Title>Selecione o plano</Title>
+                </div>
               </div>
-              <div className="step-info">
-                <Paragraph>STEP 2</Paragraph>
-                <Title>Selecione o plano</Title>
-              </div>
-            </div>
             </div>
 
             <div className="step">
@@ -60,31 +62,64 @@ function App() {
         </div>
       </aside>
         <div className="content">
-          <button onClick={() => setStep(2)}>Próximo step</button>
+        <form>
           {step === 1 && (
-            <form>
-              <Title className="form-title">Informações pessoais</Title>
-              <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
-            </form>
+            <>
+              <header>
+                <Title className="form-title">Informações pessoais</Title>
+                <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
+              </header>
+              <div className="form-group">
+                <Input placeholder="Ex: John Doe" label="Nome"/>
+                <Input placeholder="Ex: email@exemplo.com" label="E-mail"/>
+                <Input placeholder="Ex: +55 (11) 91234-5678" label="Telefone"/>
+              </div>
+            </>
           )}
           {step === 2 &&(
-            <form>
-              <Title className="form-title">Planos</Title>
-              <Paragraph className="form-description">Selecione um dos nossos planos</Paragraph>
-            </form>
+            <>
+              <header>
+                <Title className="form-title">Informações pessoais</Title>
+                <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
+              </header>
+              <div className="form-group">
+                <Input placeholder="Ex: John Doe" label="Nome"/>
+                <Input placeholder="Ex: email@exemplo.com" label="E-mail"/>
+                <Input placeholder="Ex: +55 (11) 91234-5678" label="Telefone"/>
+              </div>
+            </>
           )}
           {step === 3 && (
-            <form>
-              <Title className="form-title">esse eu n sei</Title>
-              <Paragraph className="form-description">esse eu n sei</Paragraph>
-            </form>
+            <>
+              <header>
+                <Title className="form-title">Informações pessoais</Title>
+                <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
+              </header>
+              <div className="form-group">
+                <Input placeholder="Ex: John Doe" label="Nome"/>
+                <Input placeholder="Ex: email@exemplo.com" label="E-mail"/>
+                <Input placeholder="Ex: +55 (11) 91234-5678" label="Telefone"/>
+              </div>
+            </>
           )}
           {step === 4 && (
-            <form>
-              <Title className="form-title">Sumário</Title>
-              <Paragraph className="form-description">alguma coisa pra botar</Paragraph>
-            </form>
+            <>
+              <header>
+                <Title className="form-title">Informações pessoais</Title>
+                <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
+              </header>
+              <div className="form-group">
+                <Input placeholder="Ex: John Doe" label="Nome"/>
+                <Input placeholder="Ex: email@exemplo.com" label="E-mail"/>
+                <Input placeholder="Ex: +55 (11) 91234-5678" label="Telefone"/>
+              </div>
+            </>
           )}
+            <div className="form-buttons">
+              <Button simple style={{display: `${step > 1 ? 'block' : 'none'}`, marginRight: 'auto'}} onClick={(e) => {setStep(step - 1); e.preventDefault()}}>Anterior</Button>
+              <Button style={{display: `${step < 4 ? 'block' : 'none'}`, marginLeft: 'auto'}} onClick={(e) => {setStep(step + 1); e.preventDefault()}}>Próximo</Button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
