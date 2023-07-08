@@ -81,12 +81,34 @@
     padding: 10px 30px;
 }
 
-.container form .form-title{
+.container form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container form header{
+    margin-bottom: 20px;
+}
+
+.container form header .form-title{
     font-size: 24px;
     color: rgb(51, 51, 111);
 }
 
-.container form .form-description{
+.container form header .form-description{
     font-size: 15px;
     color: rgb(182, 182, 182);
 }
+
+.container form .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.container form .form-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+} 
