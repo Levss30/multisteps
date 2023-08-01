@@ -78,15 +78,7 @@ function App() {
           )}
           {step === 2 &&(
             <>
-              <header>
-                <Title className="form-title">Informações pessoais</Title>
-                <Paragraph className="form-description">Forneça suas informações para o cadastro</Paragraph>
-              </header>
-              <div className="form-group">
-                <Input placeholder="Ex: John Doe" label="Nome"/>
-                <Input placeholder="Ex: email@exemplo.com" label="E-mail"/>
-                <Input placeholder="Ex: +55 (11) 91234-5678" label="Telefone"/>
-              </div>
+              
             </>
           )}
           {step === 3 && (
